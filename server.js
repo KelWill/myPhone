@@ -10,6 +10,11 @@ app.use(express.bodyParser());
 app.post('*', function(request, response){
   console.log(request.body);
   console.log(request.params);
+  response.end();
+});
+
+app.get('*', function(request, response){
+  response.end();
 });
 
 app.listen(port);
