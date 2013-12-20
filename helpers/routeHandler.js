@@ -3,7 +3,7 @@ var facebook     = require('./facebook.js');
 var help         = require('./help.js');
 var testing      = require('./testing.js');
 
-exports = function(request, response, message){
+module.exports = function(request, response, message){
   var array = message.split(' ');
   console.log(array);
   var doThis = {};

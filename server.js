@@ -19,7 +19,7 @@ app.post('*', function(request, response){
 });
 
 app.get('*', function(request, response){
-  response.end();
+  response.send(JSON.stringify(routeHandler));
 });
 
 app.listen(port);
