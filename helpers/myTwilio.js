@@ -1,6 +1,6 @@
 var twilioSid      = process.env.TWILIO_SID;
 var twilioAuth     = process.env.TWILIO_TOKEN;
-var client         = require('twilio')(accountSid, authToken);
+var client         = require('twilio')(twilioSid, twilioAuth);
 var myNum          = process.env.MY_NUMBER;
 var twilioNum      = process.env.TWILIO_NUMBER;
 
