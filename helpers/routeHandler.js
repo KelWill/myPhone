@@ -4,6 +4,7 @@ var help         = require('./help.js');
 var testing      = require('./testing.js');
 
 module.exports = function(request, response, message){
+  console.log(request.body);
   var array = message.split(' ');
   console.log(array);
   var doThis = {};

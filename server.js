@@ -15,7 +15,7 @@ app.post('*', function(request, response){
     response.end();
   }
   var message = request.body;
-  routeHandler(request, response, request.body);
+  routeHandler(request, response, request.body.message);
 });
 
 app.get('*', function(request, response){
