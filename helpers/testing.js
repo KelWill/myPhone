@@ -1,5 +1,5 @@
 var http = require('http');
-// var myTwilio = require('./myTwilio.js');
+var myTwilio = require('./myTwilio.js');
 
 exports.handle = function(request, response, doThis){
   console.log('whooohooooooo');
@@ -9,8 +9,6 @@ exports.handle = function(request, response, doThis){
       weather+=chunk;
     });
     res.on('end', function(){
-      console.log(weather);
-      console.log(typeof weather);
       myTwilio.send(weather);
     });
   };
