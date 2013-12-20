@@ -8,14 +8,14 @@ module.exports = function(request, response, message){
   var array = message.split(' ');
   console.log(array);
   var doThis = {};
-  doThis.platform = array[0].toLowerCase();
-  doThis.method = array[1].toLowerCase();
-  doThis.command = array[2].toLowerCase();
+  doThis.platform = array[0] && array[0].toLowerCase();
+  doThis.method = array[1] && array[1].toLowerCase();
+  doThis.command = array[2] && array[2].toLowerCase();
   if (doThis.command && doThis.command.slice(doThis.command.length - 1) === "+"){
-    doThis.extra = array[3].toLowerCase();
-    doThis.message = array.slice(4);
+    doThis.extra = array[3] && array[3].toLowerCase();
+    doThis.message = array[4] && array.slice(4);
   } else {
-    doThis.message = array.slice(3);
+    doThis.message = array[3] && array.slice(3);
   }
   platforms[doThis.platform](request, response, doThis);
 };

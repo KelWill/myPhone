@@ -11,7 +11,7 @@ exports.handle = function(request, response, doThis){
 
   var req = http.request({
     method: "GET",
-    host: "uselessapi.azurewebsites.net",
+    host: "http://uselessapi.azurewebsites.net",
     path: "/antarcticweather",
     headers: {
       "Content-Type": "application/json"
@@ -19,3 +19,4 @@ exports.handle = function(request, response, doThis){
   }, callback);
   req.end();
 };
+
