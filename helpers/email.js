@@ -1,17 +1,17 @@
 //storing messages after get, so that you can reply to the same messages
-var db = require('./myFirebase.js');
-var help = require('./help.js');
-var MailParser = require('mailparser').MailParser;
+// var db = require('./myFirebase.js');
+// var help = require('./help.js');
+// var MailParser = require('mailparser').MailParser;
 
-var mailParser = new MailParser({debug: true});
+// var mailParser = new MailParser({debug: true});
 
-mailparser.on("headers", function(headers){
-  console.log(headers.received);
-});
+// mailparser.on("headers", function(headers){
+//   console.log(headers.received);
+// });
 
-mailparser.on("end", function(mail){
-  console.log(mail); // object structure for parsed e-mail
-});
+// mailparser.on("end", function(mail){
+//   console.log(mail); // object structure for parsed e-mail
+// });
 
 exports.handle = function(request, response, doThis){
   console.log('getting handled by email');

@@ -1,6 +1,6 @@
 var http = require('http');
 var myTwilio = require('./myTwilio.js');
-//This is just being written to test basic functionality
+
 exports.handle = function(request, response, doThis){
   var callback = function(message){
     myTwilio.send(message);
@@ -16,4 +16,4 @@ exports.handle = function(request, response, doThis){
     }
   }, callback);
   req.end();
-}
+};

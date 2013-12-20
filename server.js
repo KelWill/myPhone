@@ -2,8 +2,6 @@ var express = require('express');
 var routeHandler = require('./helpers/routeHandler');
 
 var port           = process.env.PORT || 3000;
-var twilioSid      = process.env.TWILIO_SID;
-var twilioAuth     = process.env.TWILIO_TOKEN;
 var myNum          = process.env.MY_NUMBER;
 var twilioNum      = process.env.TWILIO_NUMBER;
 

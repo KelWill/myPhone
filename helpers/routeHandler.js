@@ -1,6 +1,7 @@
 var email        = require('./email.js');
 var facebook     = require('./facebook.js');
-var requestHelp  = require('/.requestHelp.js');
+var help         = require('./help.js');
+var testing      = require('./testing.js');
 
 exports = function(request, response, message){
   var array = message.split(' ');
