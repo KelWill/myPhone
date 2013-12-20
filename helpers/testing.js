@@ -1,17 +1,23 @@
 var http = require('http');
-var myTwilio = require('./myTwilio.js');
+// var myTwilio = require('./myTwilio.js');
 
 exports.handle = function(request, response, doThis){
   console.log('whooohooooooo');
-  var callback = function(message){
-    console.log(arguments);
-    myTwilio.send(message);
-    response.end();
+  var callback = function(res){
+    var weather = '';
+    res.on('data', function(chunk){
+      weather+=chunk;
+    });
+    res.on('end', function(){
+      console.log(weather);
+      console.log(typeof weather);
+      myTwilio.send(weather);
+    });
   };
 
   var req = http.request({
     method: "GET",
-    host: "http://uselessapi.azurewebsites.net",
+    host: "uselessapi.azurewebsites.net",
     path: "/antarcticweather",
     headers: {
       "Content-Type": "application/json"
@@ -19,4 +25,3 @@ exports.handle = function(request, response, doThis){
   }, callback);
   req.end();
 };
-
