@@ -2,7 +2,9 @@ var http = require('http');
 var myTwilio = require('./myTwilio.js');
 
 exports.handle = function(request, response, doThis){
+  console.log('whooohooooooo');
   var callback = function(message){
+    console.log(arguments);
     myTwilio.send(message);
     response.end();
   };

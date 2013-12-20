@@ -5,6 +5,7 @@ var testing      = require('./testing.js');
 
 exports = function(request, response, message){
   var array = message.split(' ');
+  console.log(array);
   var doThis = {};
   doThis.platform = array[0].toLowerCase();
   doThis.method = array[1].toLowerCase();
